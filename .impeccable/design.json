@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: Studio Babui",
+  "extensions": {
+    "colorMeta": {
+      "ivory": { "role": "neutral", "displayName": "Ivory Field" },
+      "ink": { "role": "primary", "displayName": "Ink" },
+      "stone": { "role": "neutral", "displayName": "Stone (large text only)" },
+      "graphite": { "role": "neutral", "displayName": "Graphite (small secondary text)" },
+      "sand": { "role": "neutral", "displayName": "Sand Plate" },
+      "umber": { "role": "tertiary", "displayName": "Umber Mark" },
+      "error": { "role": "error", "displayName": "Error Red-Brown" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero, section titles, statement, newsletter heading." },
+      "title": { "displayName": "Title", "purpose": "Collection names and inner-page subheads." },
+      "lede": { "displayName": "Lede", "purpose": "Pull statements, numerals, search results, subtotal." },
+      "label": { "displayName": "Label", "purpose": "Navigation, captions, metadata, CTAs, buttons." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-reveal", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Expo-out: clip-path reveals, line reveals, hover transitions." },
+      { "name": "reveal-duration", "value": "1.4s", "purpose": "Photograph clip-path wipe; photo settles from scale 1.18 over 1.8s." },
+      { "name": "text-duration", "value": "1.1s", "purpose": "Masked line rise, 0.09s stagger." },
+      { "name": "drift", "value": "scrub, linear, 6–12% yPercent", "purpose": "Desktop parallax on photographs." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "Primary commerce action: Add to bag, Checkout.",
+      "html": "<button class=\"ds-btn-solid\">Add to bag</button>",
+      "css": ".ds-btn-solid { width: 100%; background: var(--color-ink, #22211f); color: var(--color-ivory, #f5f2ec); padding: 16px 0; border: 0; border-radius: 0; font: 500 11px/1.4 'DM Sans', sans-serif; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; transition: opacity .3s; } .ds-btn-solid:hover { opacity: .9; } .ds-btn-solid:focus-visible { outline: 1px solid #22211f; outline-offset: 4px; }"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "custom",
+      "refersTo": "link-cta",
+      "description": "The site's one call-to-action form.",
+      "html": "<a class=\"ds-cta\" href=\"#\"><span>Explore the collection</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; gap: 12px; padding-bottom: 8px; border-bottom: 1px solid rgb(34 33 31 / .3); color: #22211f; text-decoration: none; font: 500 11px/1.4 'DM Sans', sans-serif; letter-spacing: .16em; text-transform: uppercase; transition: border-color .5s; } .ds-cta svg { transition: transform .5s cubic-bezier(.16,1,.3,1); } .ds-cta:hover { border-color: #22211f; } .ds-cta:hover svg { transform: translateX(6px); } .ds-cta:focus-visible { outline: 1px solid #22211f; outline-offset: 4px; }"
+    },
+    {
+      "name": "Underline Field",
+      "kind": "input",
+      "refersTo": "input-underline",
+      "description": "Newsletter and search input: no box, one rule.",
+      "html": "<label class=\"ds-field\"><span>Email address</span><input type=\"email\" placeholder=\"name@example.com\"></label>",
+      "css": ".ds-field { display: block; font: 500 11px/1.4 'DM Sans', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #625e57; } .ds-field input { display: block; width: 100%; margin-top: 8px; padding: 12px 0; border: 0; border-bottom: 1px solid rgb(34 33 31 / .4); background: transparent; font: 400 16px/1.65 'DM Sans', sans-serif; letter-spacing: 0; text-transform: none; color: #22211f; outline: none; } .ds-field input:focus { border-color: #22211f; }"
+    },
+    {
+      "name": "Size Option",
+      "kind": "chip",
+      "refersTo": "size-option",
+      "description": "Size radio tile on product pages.",
+      "html": "<span class=\"ds-size\">M</span><span class=\"ds-size ds-size--on\">L</span>",
+      "css": ".ds-size { display: inline-grid; place-items: center; min-width: 48px; height: 44px; padding: 0 12px; margin-right: 8px; border: 1px solid #e9e2d7; font: 500 11px/1 'DM Sans', sans-serif; letter-spacing: .16em; color: #22211f; transition: border-color .3s; } .ds-size:hover { border-color: #22211f; } .ds-size--on { background: #22211f; color: #f5f2ec; border-color: #22211f; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "description": "Three-zone header: links, centred wordmark, search and bag.",
+      "html": "<nav class=\"ds-nav\"><span><a href=\"#\">Shop</a><a href=\"#\" aria-current=\"page\">Collections</a><a href=\"#\">About</a></span><b>Studio Babui</b><span><a href=\"#\">Search</a><a href=\"#\">Bag (1)</a></span></nav>",
+      "css": ".ds-nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 80px; padding: 0 48px; background: #f5f2ec; } .ds-nav span { display: flex; gap: 32px; } .ds-nav span:last-child { justify-content: flex-end; } .ds-nav a { color: #22211f; text-decoration: none; font: 500 11px/1.4 'DM Sans', sans-serif; letter-spacing: .16em; text-transform: uppercase; background: linear-gradient(currentColor,currentColor) 100% 100% / 0 1px no-repeat; padding-bottom: 2px; transition: background-size .6s cubic-bezier(.16,1,.3,1); } .ds-nav a:hover, .ds-nav a[aria-current] { background-size: 100% 1px; background-position: 0 100%; } .ds-nav b { font: 400 20px/1 'Bodoni Moda', Didot, serif; letter-spacing: .22em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Product Plate",
+      "kind": "card",
+      "description": "Signature product presentation: photograph, one hairline row of facts. Not a card.",
+      "html": "<a class=\"ds-plate\" href=\"#\"><span class=\"ds-plate__img\"></span><span class=\"ds-plate__row\"><b>Band Collar Shirt</b><i>₹4,800</i></span><small>Shirts · Chalk Blue</small></a>",
+      "css": ".ds-plate { display: block; width: 240px; color: #22211f; text-decoration: none; } .ds-plate__img { display: block; aspect-ratio: 3/4; background: #e9e2d7; } .ds-plate__row { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; } .ds-plate__row b { font: 400 22px/1.2 'Bodoni Moda', Didot, serif; transition: padding .5s; } .ds-plate:hover .ds-plate__row b { padding-left: 12px; } .ds-plate__row i { font: 400 13px/1.5 'DM Sans', sans-serif; font-style: normal; font-variant-numeric: tabular-nums; } .ds-plate small { display: block; margin-top: 6px; font: 500 11px/1.4 'DM Sans', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #625e57; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Issue, Not the Shop",
+    "overview": "Studio Babui is presented as an issue of an independent fashion publication. Each scroll is a spread: a photograph placed off-centre on a calm ivory field, with Bodoni type working as a second image. Whitespace is the material, not leftover space. Interface chrome (navigation, captions, controls) stays tiny, tracked and quiet so the photographs and the headlines carry the page.",
+    "keyCharacteristics": [
+      "Ivory field, ink type, sand behind every photograph while it loads.",
+      "Oversized Bodoni display set against 11px tracked DM Sans capitals.",
+      "Asymmetric 12-column spreads; no two sections share a composition.",
+      "Square corners, hairline rules, no shadows, no cards.",
+      "Every animation is off under prefers-reduced-motion; content is visible without JavaScript."
+    ],
+    "rules": [
+      { "name": "The Small Text Rule", "body": "Text under 18px on ivory uses graphite, never stone; stone fails contrast at small sizes.", "section": "colors" },
+      { "name": "The No Fill Rule", "body": "Umber marks; it never fills a region.", "section": "colors" },
+      { "name": "The Italic Turn Rule", "body": "A display line may switch to italic for its last phrase. Never italicise a whole headline.", "section": "typography" },
+      { "name": "The Masked Line Rule", "body": "Any display text that animates is revealed line by line from a mask with padding below the baseline, so descenders never clip.", "section": "typography" },
+      { "name": "The One Sideways Rule", "body": "Only Featured Pieces moves horizontally, and only on desktop with motion allowed.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do let one photograph lead each spread, and give it the most space.",
+      "Do put metadata in the margins and captions (label type, graphite), never stacked above a headline.",
+      "Do reveal photographs with the clip-path wipe and display type with masked lines, using withMotion and the presets in src/lib/animations.ts.",
+      "Do keep content visible by default; animations only start from hidden once GSAP has taken over.",
+      "Do label sample data as sample, and say plainly when something isn't connected yet."
+    ],
+    "donts": [
+      "Don't use cards, shadows, rounded corners, gradients or glass.",
+      "Don't put a kicker or eyebrow label above a heading.",
+      "Don't use stone for text under 18px on ivory.",
+      "Don't add a second horizontal or pinned sequence.",
+      "Don't invent brand history, artisan, manufacturing or sustainability claims."
+    ]
+  }
+}
